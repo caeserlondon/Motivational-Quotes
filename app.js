@@ -1,8 +1,9 @@
+const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const connectDB = require('./config/db.js');
-import { engine } from 'express-handlebars';
+const { engine } = require('express-handlebars');
 
 //loading the configiration
 dotenv.config({ path: './config/config.env' });
@@ -22,6 +23,13 @@ app.engine('.hbs', engine({ defaultLayout: 'main', extname: '.hbs' }));
 app.set('view engine', '.hbs');
 app.set('views', './views');
 
+// static folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+//Routes
+app.use('/', require('./routes/index'));
+
+// PORT
 const PORT = process.env.PORT || 3030;
 
 app.listen(
