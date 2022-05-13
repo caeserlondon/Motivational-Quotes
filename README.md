@@ -5,6 +5,8 @@ mongoose: to work with database and create models.
 connect-mongo: to store the session in the DB to avoid been Logged Out after server reset.
 express-session: for sessions and cookies.
 express-handlebars: used to render web pages to the client side from data on the server-side.
+Materialize: a responsive front-end framework based on Material Design.
+Font Awesome: For icons.
 dotenv: for configuration and storing environment variable.
 method-override: to be able to use delete & put request from the template.
 moment: to formate dates
