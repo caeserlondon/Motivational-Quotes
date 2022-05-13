@@ -1,3 +1,17 @@
 body {
-	background-color: aqua;
+	background-color: #e0f7fa;
+}
+
+.login-container {
+	width: 400px;
+	margin: 50px auto;
+	text-align: center;
+}
+
+p {
+	margin: 10px 0 !important;
+}
+
+.fa-beat {
+	color: #18ffff;
 }
