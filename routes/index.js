@@ -25,6 +25,7 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
 		});
 	} catch (error) {
 		console.error(error);
+		res.render('erroe/500');
 	}
 });
 
