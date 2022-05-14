@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const QuoteSchema = new mongoose.Schema({
-	auther: {
+	title: {
 		type: String,
 		required: true,
 		trim: true,
@@ -25,4 +25,4 @@ const QuoteSchema = new mongoose.Schema({
 	},
 });
 
-module.exports = mongoose.model('Story', StorySchema);
+module.exports = mongoose.model('Quote', QuoteSchema);
