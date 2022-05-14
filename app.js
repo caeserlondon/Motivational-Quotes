@@ -3,10 +3,10 @@ const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const { engine } = require('express-handlebars');
-// const exphbs = require('express-handlebars');
-
+const mongoose = require('mongoose');
 const passport = require('passport');
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const connectDB = require('./config/db.js');
 
 //Loading the configiration
@@ -37,6 +37,7 @@ app.use(
 		secret: 'keyboard cat',
 		resave: false,
 		saveUninitialized: false,
+		store: new MongoStore({ mongooseConnection: mongoose.connection }),
 	})
 );
 
